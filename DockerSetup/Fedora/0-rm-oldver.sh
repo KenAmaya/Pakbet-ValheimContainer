@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if root
-if [ 'whoami' != root ]
+if [ $(whoami) != root ]
 then
 	echo "Please run this script as root."
         echo "Required when uninstalling."
