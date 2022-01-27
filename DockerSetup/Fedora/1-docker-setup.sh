@@ -1,4 +1,13 @@
 #!/bin/sh
+
+# Check if root
+if [ $(id -u) -ne 0 ]
+then
+	echo "Please run this script as root."
+        echo "Required when installing."
+	exit
+fi
+
 echo "Installing the dnf-plugins-core package"
 dnf -y install dnf-plugins-core
 
