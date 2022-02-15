@@ -8,12 +8,13 @@ then
 fi
 
 echo "Creating server directories:"
-echo "Making $HOME/valheim-server/config/worlds"
-mkdir -p $HOME/valheim-server/config/worlds
-echo "Making $HOME/valheim-server/data"
-mkdir -p $HOME/valheim-server/data
+echo "Making ../valheim-server/config/worlds"
+mkdir -p ../valheim-server/config/worlds
+echo "Making ../valheim-server/data"
+mkdir -p ../valheim-server/data
+echo "Fetching the Valheim Server's .yaml file"
+curl -o ../valheim-server/docker-compose.yaml https://raw.githubusercontent.com/lloesche/valheim-server-docker/main/docker-compose.yaml
 
-# Your save data (.fwl and .db) should be moved to the directory in line 4
+# Your save data (.fwl and .db) should be moved to the directory valheim-server/config/worlds
 
-source ./4-start-valheimserver.sh
 
